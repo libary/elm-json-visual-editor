@@ -1,0 +1,30 @@
+{
+    "address" :
+    {
+        "label" : "Адрес",
+        "value" : "Москва"
+    },
+    "objType" :
+    {
+        "label" : "Объект сделки",
+        "value" : "Квартира"
+    },
+    "dealType" :
+    {
+        "label" : "Тип сделки",
+        "value" : "Продажа"
+    },
+    "floor" :
+    {
+        "current" :
+        {
+            "label" : "Этаж",
+            "value" : 3
+        },
+        "total" :
+        {
+            "label" : "Всего этажей",
+            "value" : 10
+        }
+    }
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+</head>
+<body>
+  <div id="editor"></div>
+  <script src="jsonEditor.js"></script>
+  <script>
+
+      var obj = {};
+
+      obj.address =  {};
+      obj.address.value = "Москва";
+      obj.address.desc = "Адрес";
+
+      obj.objType = {};
+      obj.objType.value = "Квартира";
+      obj.objType.desc = "Объект сделки";
+
+      obj.dealType = {};
+      obj.dealType.value = "Продажа";
+      obj.dealType.desc = "Тип сделки";
+
+      obj.floor = {};
+      obj.floor.current = {};
+      obj.floor.current.value = 3;
+      obj.floor.current.desc = "Этаж";
+      obj.floor.total = {};
+      obj.floor.total.value = 10;
+      obj.floor.total.desc = "Всего этажей";
+
+      var jsonStr = JSON.stringify(obj);
+
+      console.log(jsonStr);
+
+      var node = document.getElementById("editor");
+      var app = Elm.JsonEditor.embed(node, {
+          json : jsonStr
+      });
+  </script>
+</body>
+</html>
