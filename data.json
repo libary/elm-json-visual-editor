@@ -4,27 +4,24 @@
         "label" : "Адрес",
         "value" : "Москва"
     },
-    "objType" :
+    "ownership" :
     {
-        "label" : "Объект сделки",
-        "value" : "Квартира"
-    },
-    "dealType" :
-    {
-        "label" : "Тип сделки",
-        "value" : "Продажа"
+        "label" : "Кто вы?",
+        "value" : "Собственник"
     },
     "floor" :
     {
-        "current" :
-        {
-            "label" : "Этаж",
-            "value" : 3
-        },
-        "total" :
-        {
-            "label" : "Всего этажей",
-            "value" : 10
-        }
+        "label" : "Дом",
+        "items" :
+        [
+            {
+                "label" : "Этаж",
+                "value" : 3
+            },
+            {
+                "label" : "Всего этажей",
+                "value" : 10
+            }
+        ]
     }
 }

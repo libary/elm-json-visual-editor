@@ -1,33 +1,40 @@
 module Types exposing (..)
 
-type alias Flags =
-    { json : String
-    }
+type alias Flags
+    = { json : String }
 
 type Mode
-    = Display
-    | Edit
+    = DisplayMode
+    | EditMode
+
+-- type alias Field =
+--     { name : String
+--     , label : String
+--     , value : String
+--     , mode : Mode
+--     , isValid : Maybe Bool
+--     }
 
 type alias Field =
-    { name : String
-    , label : String
+    { label : String
     , value : String
     , mode : Mode
     , isValid : Maybe Bool
     }
 
-type alias MasterField =
-    { name : String
-    , label : String
-    , fields : List Field
-    }
+-- type alias MasterField =
+--     { name : String
+--     , label : String
+--     , fields : List Field
+--     }
 
 type alias Model =
     { json : String
-    , data : List MasterField
+    , fields : List (String, Field)
     }
 
 type Msg
-    = EditField String
-    | SaveField String
+    = SetMode Mode String
+    | ChangeField String String
     | ValidateField String
+    | Stringify

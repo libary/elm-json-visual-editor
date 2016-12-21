@@ -12,24 +12,29 @@
       var obj = {};
 
       obj.address =  {};
+      obj.address.label = "Адрес";
       obj.address.value = "Москва";
-      obj.address.desc = "Адрес";
+
+      obj.ownership = {};
+      obj.ownership.label = "Кто вы?";
+      obj.ownership.value = "Собственник";
 
       obj.objType = {};
+      obj.objType.label = "Объект сделки";
       obj.objType.value = "Квартира";
-      obj.objType.desc = "Объект сделки";
 
       obj.dealType = {};
+      obj.dealType.label = "Тип сделки";
       obj.dealType.value = "Продажа";
-      obj.dealType.desc = "Тип сделки";
 
-      obj.floor = {};
-      obj.floor.current = {};
-      obj.floor.current.value = 3;
-      obj.floor.current.desc = "Этаж";
-      obj.floor.total = {};
-      obj.floor.total.value = 10;
-      obj.floor.total.desc = "Всего этажей";
+      //
+    //   obj.floor = {};
+    //   obj.floor.current = {};
+    //   obj.floor.current.value = 3;
+    //   obj.floor.current.desc = "Этаж";
+    //   obj.floor.total = {};
+    //   obj.floor.total.value = 10;
+    //   obj.floor.total.desc = "Всего этажей";
 
       var jsonStr = JSON.stringify(obj);
 

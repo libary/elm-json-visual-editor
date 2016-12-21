@@ -1,0 +1,11 @@
+{
+    "deal":
+    {
+        "index":1,
+        "type":"Sell",
+        "object":"Flat"
+    },
+    "ownership":"Собственник",
+    "photos":[],
+    "address":"Россия, Москва, Варшавское шоссе, 144к"
+}

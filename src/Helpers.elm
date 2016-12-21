@@ -5,11 +5,14 @@ import Task
 
 import Types exposing (..)
 
-message : msg -> Cmd msg
-message x =
-    Task.perform identity (Task.succeed x)
+message : Msg -> Cmd Msg
+message msg =
+    Task.perform identity (Task.succeed msg)
 
-parseJson : String -> List MasterField
-parseJson json =
-    -- List.map (\_ -> MasterField) json
-    []
+validate : Field -> Bool
+validate field =
+    (String.length field.value) > 0
+
+stringify : Model -> String
+stringify model =
+    "{json}"
