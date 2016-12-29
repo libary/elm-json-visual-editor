@@ -4,36 +4,38 @@ import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.Events exposing (..)
 import Exts.Html exposing (..)
-
 import Types exposing (..)
+
 
 view : Model -> Html Msg
 view model =
     let
         editableExist : Bool
         editableExist =
-            List.any (\(n, f) ->
-                if f.mode == EditMode then
-                    True
-                else
-                    False) model.fields
+            List.any
+                (\( n, f ) ->
+                    if f.mode == EditMode then
+                        True
+                    else
+                        False
+                )
+                model.fields
 
-        fieldView : (String, Field) -> Html Msg
-        fieldView (name, field) =
+        fieldView : ( String, Field ) -> Html Msg
+        fieldView ( name, field ) =
             case field.mode of
                 DisplayMode ->
-                    viewDisplayField (name, field, editableExist)
+                    viewDisplayField ( name, field, editableExist )
 
                 EditMode ->
-                    viewEditField (name, field)
+                    viewEditField ( name, field )
     in
         div []
-            (
-                ( List.map fieldView model.fields ) ++ [ text <| toString model]
-            )
+            ((List.map fieldView model.fields) ++ [ text <| toString model ])
 
-viewDisplayField : (String, Field, Bool) -> Html Msg
-viewDisplayField (name, field, editableExist) =
+
+viewDisplayField : ( String, Field, Bool ) -> Html Msg
+viewDisplayField ( name, field, editableExist ) =
     div []
         [ label [ for name ] [ text field.label ]
         , text nbsp
@@ -42,11 +44,13 @@ viewDisplayField (name, field, editableExist) =
         , button
             [ hidden editableExist
             , onClick (SetMode EditMode name)
-            ] [ text "изменить" ]
+            ]
+            [ text "изменить" ]
         ]
 
-viewEditField : (String, Field) -> Html Msg
-viewEditField (name, field) =
+
+viewEditField : ( String, Field ) -> Html Msg
+viewEditField ( name, field ) =
     div []
         [ label [ for name ] [ text field.label ]
         , text nbsp
@@ -56,11 +60,13 @@ viewEditField (name, field) =
             , onInput (ChangeField name)
             , autofocus True
             , classList
-                [ ("input-field-invalid", field.isValid == Just False) ]
-            ] []
+                [ ( "input-field-invalid", field.isValid == Just False ) ]
+            ]
+            []
         , text nbsp
         , button
             [ disabled (field.isValid == Just False)
             , onClick (SetMode DisplayMode name)
-            ] [ text "сохранить" ]
+            ]
+            [ text "сохранить" ]
         ]
